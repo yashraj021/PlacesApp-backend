@@ -2,13 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const PlacesRoutes = require('./routes/places-routes');
+const UsersRoutes = require("./routes/users-routes");
+
 const HttpError = require('./models/http-error');
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/api/places',PlacesRoutes);
+app.use('/api/places', PlacesRoutes);
+
+app.use('/api/user', UsersRoutes);
 
 // Error Handeling for bad requests.
 app.use((req, res, next) => {
@@ -25,4 +29,4 @@ app.use((error, req, res, next) => {
     res.json({message: error.message || 'An unknown error occured.'})
 })
 
-app.listen(5001);
+app.listen(5000);
