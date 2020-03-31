@@ -32,7 +32,7 @@ app.use((error, req, res, next) => {
 })
 
 mongoose.connect(mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => 
-    app.listen(5001)
+    app.listen(5000)
 ).catch(err => 
     console.log(err)
 );
