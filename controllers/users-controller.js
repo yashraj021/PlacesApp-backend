@@ -1,4 +1,4 @@
-const { validationResult } = require('express-validator');
+const { validationResult} = require('express-validator');
 
 
 const HttpError = require('../models/http-error');
@@ -44,7 +44,7 @@ const signUp = async (req, res, next) => {
         name,
         password,
         email,
-        image: 'https://avatars2.githubusercontent.com/u/47192627?s=460&u=887f008eec63433d4904794be842ce515776bf03&v=4',
+        image: req.file.path,
         places: []
     });
 
@@ -77,7 +77,7 @@ const login = async (req, res, next) => {
         return next(error);
     }
 
-    res.json({message: 'Logged In'}); 
+    res.json({message: 'Logged In',user: existingUser.toObject({getters: true})}); 
 };
 
 exports.getUsers = getUsers;
