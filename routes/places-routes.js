@@ -10,12 +10,16 @@ const {
 
 } =require('../controllers/places-controller');
 const fileUpload = require('../middleware/file-upload');
+const checkAuth = require('../middleware/check-auth');
+
 const router = express.Router();
 
-
+//Request for everyone
 router.get("/:pid", getPlaceById);
 
 router.get("/user/:uid", getPlacesByUserId);
+
+router.use(checkAuth );
 
 router.post("/",
 fileUpload.single('image'),
