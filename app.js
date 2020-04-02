@@ -8,7 +8,7 @@ const PlacesRoutes = require('./routes/places-routes');
 const UsersRoutes = require("./routes/users-routes");
 const HttpError = require('./models/http-error');
 
-const mongoUrl = 'mongodb+srv://yashraj021:sandhya21@cluster0-v32ho.mongodb.net/YourPlaces?retryWrites=true&w=majority';
+const mongoUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-v32ho.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use((req, res, next)=> {
     next();
 });
 
-app.use('/api/places', PlacesRoutes);
+app.use('/api/places', PlacesRoutes)
 
 app.use('/api/user', UsersRoutes);
 

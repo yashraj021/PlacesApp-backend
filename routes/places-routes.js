@@ -14,6 +14,7 @@ const checkAuth = require('../middleware/check-auth');
 
 const router = express.Router();
 
+
 //Request for everyone
 router.get("/:pid", getPlaceById);
 

@@ -1,0 +1,9 @@
+{
+    "env": {
+        "GOOGLE_API_KEY": "AIzaSyBUGefYEeHfxqD3Wb4dp75AxpKQ95hzJi4",
+        "DB_USER": "yashraj021",
+        "DB_PASSWORD": "sandhya21",
+        "DB_NAME": "YourPlaces",
+        "JWT_PASS": "sandhya21"
+    }
+}
